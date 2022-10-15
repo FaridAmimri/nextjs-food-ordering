@@ -1,0 +1,94 @@
+/** @format */
+
+.container {
+  height: 100px;
+  padding: 0 50px;
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  color: var(--primary-color);
+}
+
+.item:nth-child(2) {
+  flex: 2;
+}
+
+.item:last-child {
+  justify-content: flex-end;
+}
+
+.callButton {
+  color: var(--text-color);
+  background-color: var(--background-color-light);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+}
+
+.text:first-child {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.text:last-child {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style: none;
+}
+
+.listItem {
+  margin: 20px;
+}
+
+.logo svg {
+  width: 50px;
+  height: 50px;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart svg {
+  width: 30px;
+  height: 30px;
+}
+
+.counter {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: var(--text-color);
+  background-color: var(--background-color-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
