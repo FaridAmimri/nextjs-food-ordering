@@ -1,0 +1,36 @@
+/** @format */
+
+.container {
+  height: calc(100vh - 100px);
+  background-color: var(--text-color);
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 300vw;
+  height: 100%;
+  display: flex;
+  transition: all 1.5s ease-in-out;
+}
+
+.imgContainer {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  object-fit: contain;
+}
+
+.imgContainer img {
+  object-fit: contain;
+}
+
+.arrowContainer svg {
+  height: 10%;
+  width: 10%;
+  position: absolute;
+  top: calc((100vh - 100px) / 2);
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 10;
+  object-fit: contain;
+}
