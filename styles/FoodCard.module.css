@@ -13,7 +13,7 @@
 }
 
 .container:hover {
-  background-color: var(--background-color-dark);
+  background-color: var(--background-color-light);
   transform: scale(1.1);
 }
 
