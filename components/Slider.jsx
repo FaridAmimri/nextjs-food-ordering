@@ -7,7 +7,6 @@ import { FaChevronRight } from 'react-icons/fa'
 import Image from 'next/image'
 
 const images = [
-  '/assets/featured1.png',
   '/assets/featured2.png',
   '/assets/featured3.png'
 ]
