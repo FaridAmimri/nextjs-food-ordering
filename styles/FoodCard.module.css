@@ -1,0 +1,38 @@
+/** @format */
+
+.container {
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.container:hover {
+  background-color: var(--background-color-dark);
+  transform: scale(1.1);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.price {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.description {
+  text-align: center;
+  font-size: 13px;
+  color: var(--tertiary-color);
+}
