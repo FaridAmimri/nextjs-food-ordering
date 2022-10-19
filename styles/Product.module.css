@@ -1,0 +1,106 @@
+/** @format */
+
+/* Poduct Image on the left side */
+
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+.productImg {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Poduct details on the right side */
+
+.productInfo {
+  flex: 1;
+  padding: 5px;
+}
+
+.imgContainer {
+  width: 80%;
+  height: 80%;
+  position: relative;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 400;
+  border-bottom: 1px solid;
+}
+
+.description {
+  color: var(--secondary-color);
+}
+
+.choose {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.sizes {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.size {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.size:nth-child(2) {
+  width: 40px;
+  height: 40px;
+}
+
+.size:last-child {
+  width: 50px;
+  height: 50px;
+}
+
+.text {
+  position: absolute;
+  top: -3px;
+  right: -30px;
+  background-color: var(--text-color);
+  color: var(--primary-color);
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.ingredients {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin-bottom: 15px;
+}
+
+.checkbox span {
+  color: var(--secondary-color);
+}
+
+.add {
+  display: flex;
+}
+
+.quantity label {
+  margin-right: 10px;
+}
+
+.button {
+  background-color: var(--text-color);
+}
