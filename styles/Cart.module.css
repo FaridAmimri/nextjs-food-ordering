@@ -1,0 +1,55 @@
+/** @format */
+
+.container {
+  display: flex;
+  padding: 40px;
+}
+
+.left {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.right {
+  flex: 1;
+}
+
+.column {
+  text-align: center;
+}
+
+.header {
+  color: var(--text-color-secondary);
+  font-weight: bold;
+}
+
+.imgContainer {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.name {
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.quantity {
+  text-align: center;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.contentTitle {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
