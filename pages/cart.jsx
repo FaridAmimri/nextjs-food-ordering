@@ -20,26 +20,22 @@ function cart() {
               <div className={styles.header}>Product</div>
             </Table.Column>
             <Table.Column>
-              {' '}
               <div className={styles.header}>Name</div>
             </Table.Column>
             <Table.Column>
-              {' '}
               <div className={styles.header}>Extras</div>
             </Table.Column>
             <Table.Column>
-              {' '}
               <div className={styles.header}>Price</div>
             </Table.Column>
             <Table.Column>
-              {' '}
               <div className={styles.header}>Quantity</div>
             </Table.Column>
             <Table.Column>
-              {' '}
               <div className={styles.header}>Total</div>
             </Table.Column>
           </Table.Header>
+
           <Table.Body>
             <Table.Row key='1'>
               <Table.Cell>
@@ -68,7 +64,7 @@ function cart() {
                 <p className={styles.total}>39.90 €</p>
               </Table.Cell>
             </Table.Row>
-            <Table.Row key='1'>
+            <Table.Row key='2'>
               <Table.Cell>
                 <div className={styles.imgContainer}>
                   <Image
@@ -96,11 +92,11 @@ function cart() {
               </Table.Cell>
             </Table.Row>
           </Table.Body>
+
         </Table>
       </div>
 
       <div className={styles.right}>
-        {/* <Grid sm={12} md={5}> */}
         <Card css={{ mw: '100%' }}>
           <Card.Header>
             <h1> CART TOTAL</h1>
