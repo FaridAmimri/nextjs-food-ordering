@@ -1,0 +1,86 @@
+/** @format */
+
+.container {
+  display: flex;
+  padding: 40px;
+}
+
+.left {
+  flex: 3;
+  margin-right: 20px;
+}
+
+.right {
+  flex: 1;
+}
+
+/* Orders process */
+
+.orders {
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inProgress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: inProgress 1s ease infinite alternate;
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.undone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.inProgress .checkedIcon,
+.undone .checkedIcon {
+  display: none;
+}
+
+.icon svg {
+  color: var(--secondary-color);
+  font-size: x-large;
+}
+
+.done span,
+.inProgress span,
+.undone span {
+  color: var(--secondary-color);
+}
+
+.checkedIcon svg {
+  color: green;
+}
+
+/* Cart resume*/
+
+.contentTitle {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
