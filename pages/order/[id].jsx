@@ -1,8 +1,7 @@
 /** @format */
 
-import Image from 'next/image'
 import styles from '../../styles/Order.module.css'
-import { Table, Card, Text, Button, Row } from '@nextui-org/react'
+import { Table, Card, Button } from '@nextui-org/react'
 import {
   FaCashRegister,
   FaCheckCircle,
@@ -30,22 +29,22 @@ function Order() {
             minWidth: '100%'
           }}
         >
-          <Table.Header>
+          <Table.Header >
             <Table.Column className={styles.column}>
               <div className={styles.header}>Order ID</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Customer</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Address</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Total</div>
             </Table.Column>
           </Table.Header>
 
-          <Table.Body>
+          <Table.Body className={styles.body}>
             <Table.Row>
               <Table.Cell>
                 <p className={styles.id}>137383737</p>
@@ -54,7 +53,7 @@ function Order() {
                 <p className={styles.name}>Farid Amimri</p>
               </Table.Cell>
               <Table.Cell>
-                <p className={styles.address}>Elton st. 212-33 LA</p>
+                <p className={styles.address}>75000 Paris</p>
               </Table.Cell>
               <Table.Cell>
                 <p className={styles.total}>79.60 €</p>
@@ -62,6 +61,7 @@ function Order() {
             </Table.Row>
           </Table.Body>
         </Table>
+
         <div className={styles.orders}>
           <div className={statusClass(0)}>
             <div className={styles.icon}>
