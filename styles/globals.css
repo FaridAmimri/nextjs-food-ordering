@@ -4,13 +4,14 @@
   --text-color: #d1411e;
   --text-color-secondary: black;
   --primary-color: white;
+  --secondary-color: #666;
+  --tertiary-color: #777;
 
   --background-color: #d1411e;
-  --background-color-light: white;
-  --background-color-dark: #eef3f6;
+  --background-color-light: #f0f0f0;
+  --background-color-dark: #252329;
 
   --font-family: "Poppins";
-  --box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05)
 }
 
 [data-theme='dark'] {

@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: var(--secondary-color);
 }
@@ -103,4 +103,50 @@
 
 .button {
   background-color: var(--text-color);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: auto;
+    text-align: center;
+    flex-direction: column;
+    margin: 30px;
+  }
+  .imgContainer {
+    width: 70vw;
+    height: 70vw;
+  }
+  .title {
+    font-size: 30px;
+  }
+  .price {
+    font-size: 28px;
+  }
+  .description {
+    margin: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .choose {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  .sizes {
+    width: 100%;
+    justify-content: space-around;
+  }
+  .ingredients {
+    flex-direction: column;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .option {
+    margin: 10px;
+  }
+  .checkbox span {
+    font-size: 18px;
+  }
+  .add {
+    justify-content: center;
+  }
 }

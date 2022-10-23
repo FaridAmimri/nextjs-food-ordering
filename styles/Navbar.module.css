@@ -9,7 +9,7 @@
   justify-content: space-between;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 999;
 }
 
 .item {
@@ -18,9 +18,9 @@
   color: var(--primary-color);
 }
 
-.item:nth-child(2) {
+/* .item:nth-child(2) {
   flex: 2;
-}
+} */
 
 .item:last-child {
   justify-content: flex-end;
@@ -93,3 +93,18 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 768px) {
+  .item:nth-child(1) {
+    flex: 3;
+  }
+  .item:nth-child(2) {
+    display: none;
+  }
+  .text:first-child {
+    font-size: 15px;
+  }
+
+  .text:last-child {
+    font-size: 15px;
+  }
+}

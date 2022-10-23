@@ -34,3 +34,14 @@
   z-index: 10;
   object-fit: contain;
 }
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: 50vh
+  }
+  .arrowContainer svg {
+    height: 5%;
+    top: 27%
+  }
+}

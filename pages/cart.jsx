@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import styles from '../styles/Cart.module.css'
-import { Table, Card, Text, Button, Row } from '@nextui-org/react'
+import { Table, Card, Button } from '@nextui-org/react'
 
 function cart() {
   return (
@@ -12,26 +12,27 @@ function cart() {
           aria-label='cart table'
           css={{
             height: 'auto',
-            minWidth: '100%'
+            width: 'auto'
           }}
+          SelectionMode = 'multiple'
         >
           <Table.Header>
             <Table.Column className={styles.column}>
               <div className={styles.header}>Product</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Name</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Extras</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Price</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Quantity</div>
             </Table.Column>
-            <Table.Column>
+            <Table.Column className={styles.column}>
               <div className={styles.header}>Total</div>
             </Table.Column>
           </Table.Header>
@@ -52,7 +53,7 @@ function cart() {
                 <p className={styles.name}>CORALZO</p>
               </Table.Cell>
               <Table.Cell>
-                <p className={styles.extras}>Double ingredients, spicy sauce</p>
+                <p className={styles.extras}>spicy sauce</p>
               </Table.Cell>
               <Table.Cell>
                 <p className={styles.price}>19.95 €</p>
@@ -79,7 +80,7 @@ function cart() {
                 <p className={styles.name}>CORALZO</p>
               </Table.Cell>
               <Table.Cell>
-                <p className={styles.extras}>Double ingredients, spicy sauce</p>
+                <p className={styles.extras}>spicy sauce</p>
               </Table.Cell>
               <Table.Cell>
                 <p className={styles.price}>19.95 €</p>
@@ -92,7 +93,6 @@ function cart() {
               </Table.Cell>
             </Table.Row>
           </Table.Body>
-
         </Table>
       </div>
 

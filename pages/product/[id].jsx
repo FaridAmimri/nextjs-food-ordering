@@ -98,7 +98,7 @@ function Product() {
             className={styles.quantity}
           />
 
-          <Button className={styles.button} color='warning' auto>
+          <Button className={styles.button} color='warning' >
             Add to Cart
           </Button>
         </div>

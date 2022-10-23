@@ -53,3 +53,40 @@
   width: 100%;
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .left {
+    flex: 1;
+    margin: 0;
+    padding: 20px;
+  }
+  .left p {
+    font-size: 20px;
+    white-space: pre-wrap;
+    text-align: center;
+  }
+  .right {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .header {
+    text-align: center;
+    font-size: 18px;
+  }
+  .imgContainer {
+    height: 50px;
+    width: 50px;
+  }
+  .extras {
+    white-space: pre-wrap;
+  }
+  .button span {
+    font-size: 22px;
+  }
+}
