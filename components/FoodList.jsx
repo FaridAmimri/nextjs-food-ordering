@@ -3,7 +3,7 @@
 import styles from '../styles/FoodList.module.css'
 import FoodCard from './FoodCard'
 
-function FoodList() {
+function FoodList({ productList }) {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>PIZZA DI MAMA</h1>
@@ -14,14 +14,9 @@ function FoodList() {
         nesciunt fugiat alias!
       </p>
       <div className={styles.wrapper}>
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
-        <FoodCard />
+        {productList.map((food) => (
+          <FoodCard key={food._id} food={food} />
+        ))}
       </div>
     </div>
   )
