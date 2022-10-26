@@ -1,17 +1,18 @@
 /** @format */
 
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/FoodCard.module.css'
 
-function FoodCard() {
+function FoodCard({ food }) {
   return (
     <div className={styles.container}>
-      <Image src='/assets/pizza.png' alt='' width={500} height={500} />
-      <h1 className={styles.title}>FIORI ZUCCA</h1>
-      <span className={styles.price}>19,00 €</span>
-      <p className={styles.description}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </p>
+      <Link href={`/product/${food._id}`}>
+        <Image src={food.image} alt='' width={500} height={500} />
+      </Link>
+      <h1 className={styles.title}>{food.title}</h1>
+      <span className={styles.price}>{food.prices[0]} €</span>
+      <p className={styles.description}>{food.description}</p>
     </div>
   )
 }
