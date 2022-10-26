@@ -9,14 +9,14 @@ const ProductSchema = new mongoose.Schema(
       required: true,
       maxlength: 60
     },
+    image: {
+      type: String,
+      required: true
+    },
     description: {
       type: String,
       required: true,
       maxlength: 200
-    },
-    image: {
-      type: String,
-      required: true
     },
     prices: {
       type: [Number],
