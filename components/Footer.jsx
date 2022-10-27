@@ -12,6 +12,7 @@ function Footer() {
           alt=''
           layout='fill'
           objectFit='cover'
+          priority={true}
         />
       </div>
       <div className={styles.item}>
