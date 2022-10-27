@@ -2,117 +2,69 @@
 
 import Image from 'next/image'
 import styles from '../styles/Cart.module.css'
-import { Table, Card, Button } from '@nextui-org/react'
+import { Card, Button } from '@nextui-org/react'
+import { useDispatch, useSelector } from 'react-redux'
 
 function cart() {
+  // const dispatch = useDispatch()
+  // const cart = useSelector((state) => state.cart)
+
   return (
     <div className={styles.container}>
       <div className={styles.left}>
-        <Table
-          aria-label='cart table'
-          css={{
-            height: 'auto',
-            width: 'auto'
-          }}
-          SelectionMode = 'multiple'
-        >
-          <Table.Header>
-            <Table.Column className={styles.column}>
-              <div className={styles.header}>Product</div>
-            </Table.Column>
-            <Table.Column className={styles.column}>
-              <div className={styles.header}>Name</div>
-            </Table.Column>
-            <Table.Column className={styles.column}>
-              <div className={styles.header}>Extras</div>
-            </Table.Column>
-            <Table.Column className={styles.column}>
-              <div className={styles.header}>Price</div>
-            </Table.Column>
-            <Table.Column className={styles.column}>
-              <div className={styles.header}>Quantity</div>
-            </Table.Column>
-            <Table.Column className={styles.column}>
-              <div className={styles.header}>Total</div>
-            </Table.Column>
-          </Table.Header>
-
-          <Table.Body>
-            <Table.Row key='1'>
-              <Table.Cell>
+        <table className={styles.table}>
+          <tbody className={styles.tableBody}>
+            <tr className={styles.tableRowTitle}>
+              <th>Product</th>
+              <th>Name</th>
+              <th>Extras</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+            <tr className={styles.tableRowData}>
+              <td className={styles.tableData}>
                 <div className={styles.imgContainer}>
-                  <Image
-                    src='/assets/pizza.png'
-                    layout='fill'
-                    objectFit='cover'
-                    alt=''
-                  />
+                  <Image src='/assets/pizza.png' layout='fill' alt='' />
                 </div>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.name}>CORALZO</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.extras}>spicy sauce</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.price}>19.95 €</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.quantity}>2</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.total}>39.90 €</p>
-              </Table.Cell>
-            </Table.Row>
-            <Table.Row key='2'>
-              <Table.Cell>
-                <div className={styles.imgContainer}>
-                  <Image
-                    src='/assets/pizza.png'
-                    layout='fill'
-                    objectFit='cover'
-                    alt=''
-                  />
-                </div>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.name}>CORALZO</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.extras}>spicy sauce</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.price}>19.95 €</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.quantity}>2</p>
-              </Table.Cell>
-              <Table.Cell>
-                <p className={styles.total}>39.90 €</p>
-              </Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table>
+              </td>
+              <td className={styles.tableData}>
+                <span className={styles.name}>Margherita</span>
+              </td>
+              <td className={styles.tableData}>
+                <span className={styles.extras}>Spicy sauce</span>
+              </td>
+              <td className={styles.tableData}>
+                <span className={styles.price}>19,90 €</span>
+              </td>
+              <td className={styles.tableData}>
+                <span className={styles.quantity}>2</span>
+              </td>
+              <td className={styles.tableData}>
+                <span className={styles.total}>39,80 €</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <div className={styles.right}>
         <Card css={{ mw: '100%' }}>
           <Card.Header>
-            <h1> CART TOTAL</h1>
+            <h1 className={styles.cardHeader}> CART TOTAL</h1>
           </Card.Header>
           <Card.Divider />
           <Card.Body>
-            <div className={styles.content}>
-              <b className={styles.contentTitle}>Subtotal:</b>
+            <div className={styles.cardContent}>
+              <b>Subtotal:</b>
               79.60 €
             </div>
-            <div className={styles.content}>
-              <b className={styles.contentTitle}>Discount:</b>
+            <div className={styles.cardContent}>
+              <b>Discount:</b>
               0.00 €
             </div>
-            <div className={styles.content}>
-              <b className={styles.contentTitle}>Total:</b>
+            <div className={styles.cardContent}>
+              <b>Total:</b>
               79.60 €
             </div>
           </Card.Body>
