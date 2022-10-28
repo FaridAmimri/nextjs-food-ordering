@@ -1,13 +1,26 @@
 /** @format */
 
 import styles from '../styles/Navbar.module.css'
-import { FaPhone } from 'react-icons/fa'
-import { FaShoppingCart } from 'react-icons/fa'
-import { FaPizzaSlice } from 'react-icons/fa'
+import { FaPhone, FaPizzaSlice, FaShoppingCart, FaBars } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function Navbar() {
+  const [expandNavbar, setExpandNavbar] = useState(false)
+  const location = useRouter()
+  const quantity = useSelector((state) => state.cart.quantity)
+
+  useEffect(() => {
+    setExpandNavbar(false)
+  }, [location])
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      id={expandNavbar ? styles.open : styles.close}
+    >
       <div className={styles.item}>
         <div className={styles.callButton}>
           <FaPhone />
@@ -17,9 +30,14 @@ function Navbar() {
           <div className={styles.text}>06 40 40 82 05</div>
         </div>
       </div>
-      <div className={styles.item}>
+      <div
+        className={styles.item}
+        id={expandNavbar ? styles.openLinks : styles.closeLinks}
+      >
         <ul className={styles.list}>
-          <li className={styles.listItem}>Home</li>
+          <Link href='/'>
+            <li className={styles.listItem}>Home</li>
+          </Link>
           <li className={styles.listItem}>Menu</li>
           <div className={styles.logo}>
             <FaPizzaSlice />
@@ -29,10 +47,24 @@ function Navbar() {
         </ul>
       </div>
       <div className={styles.item}>
-        <div className={styles.cart}>
-          <FaShoppingCart />
+        <div className={styles.toggleButton}>
+          <FaBars
+            onClick={() => {
+              setExpandNavbar((prev) => !prev)
+            }}
+          />
         </div>
-        <div className={styles.counter}>2</div>
+        <Link href='/cart'>
+          <div
+            className={styles.cart}
+            id={expandNavbar ? styles.openCart : styles.closeCart}
+          >
+            <div className={styles.cartIcon}>
+              <FaShoppingCart />
+            </div>
+            <div className={styles.counter}>{quantity}</div>
+          </div>
+        </Link>
       </div>
     </div>
   )
