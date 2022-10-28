@@ -22,6 +22,7 @@ function Product({ pizza }) {
   const [size, setSize] = useState(0)
   const [extras, setExtras] = useState([])
   const [quantity, setQuantity] = useState(1)
+  
   const dispatch = useDispatch()
 
   const changePrice = (number) => {
