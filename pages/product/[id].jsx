@@ -5,6 +5,8 @@ import { useState } from 'react'
 import styles from '../../styles/Product.module.css'
 import { Checkbox, Input, Button } from '@nextui-org/react'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartSlice'
 
 export const getServerSideProps = async ({ params }) => {
   const res = await axios.get(`http://localhost:3000/api/products/${params.id}`)
@@ -20,6 +22,7 @@ function Product({ pizza }) {
   const [size, setSize] = useState(0)
   const [extras, setExtras] = useState([])
   const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch()
 
   const changePrice = (number) => {
     setPrice(price + number)
@@ -42,7 +45,11 @@ function Product({ pizza }) {
       setExtras(extras.filter((extra) => extra._id !== option._id))
     }
   }
-  console.log(quantity)
+
+  const handleClick = () => {
+    dispatch(addProduct({...pizza, extras, price, quantity}))
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.productImg}>
@@ -119,7 +126,11 @@ function Product({ pizza }) {
             onChange={(event) => setQuantity(event.target.value)}
           />
 
-          <Button className={styles.button} color='warning'>
+          <Button
+            className={styles.button}
+            color='warning'
+            onPress={handleClick}
+          >
             Add to Cart
           </Button>
         </div>
