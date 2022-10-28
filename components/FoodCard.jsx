@@ -8,7 +8,9 @@ function FoodCard({ food }) {
   return (
     <div className={styles.container}>
       <Link href={`/product/${food._id}`}>
-        <Image src={food.image} alt='' width={500} height={500} />
+        <a>
+          <Image src={food.image} alt='' width={500} height={500} />
+        </a>
       </Link>
       <h1 className={styles.title}>{food.title}</h1>
       <span className={styles.price}>{food.prices[0]} €</span>
