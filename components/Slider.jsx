@@ -41,7 +41,7 @@ function Slider() {
         {images.map((image, index) => (
           <div className={styles.imgContainer} key={index}>
             {index === currentSlide && (
-              <Image src={image} alt='' layout='fill' />
+              <Image src={image} alt='' layout='fill' priority='true' />
             )}
           </div>
         ))}
