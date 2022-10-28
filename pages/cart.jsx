@@ -5,9 +5,11 @@ import styles from '../styles/Cart.module.css'
 import { Card, Button } from '@nextui-org/react'
 import { useDispatch, useSelector } from 'react-redux'
 
-function cart() {
-  // const dispatch = useDispatch()
-  // const cart = useSelector((state) => state.cart)
+function Cart() {
+  const dispatch = useDispatch()
+  const cart = useSelector((state) => state.cart)
+
+  console.log(cart)
 
   return (
     <div className={styles.container}>
@@ -22,28 +24,36 @@ function cart() {
               <th>Quantity</th>
               <th>Total</th>
             </tr>
-            <tr className={styles.tableRowData}>
-              <td className={styles.tableData}>
-                <div className={styles.imgContainer}>
-                  <Image src='/assets/pizza.png' layout='fill' alt='' />
-                </div>
-              </td>
-              <td className={styles.tableData}>
-                <span className={styles.name}>Margherita</span>
-              </td>
-              <td className={styles.tableData}>
-                <span className={styles.extras}>Spicy sauce</span>
-              </td>
-              <td className={styles.tableData}>
-                <span className={styles.price}>19,90 €</span>
-              </td>
-              <td className={styles.tableData}>
-                <span className={styles.quantity}>2</span>
-              </td>
-              <td className={styles.tableData}>
-                <span className={styles.total}>39,80 €</span>
-              </td>
-            </tr>
+            {cart.products.map((product) => (
+              <tr className={styles.tableRowData} key={product._id}>
+                <td className={styles.tableData}>
+                  <div className={styles.imgContainer}>
+                    <Image src={product.image} layout='fill' alt='' />
+                  </div>
+                </td>
+                <td className={styles.tableData}>
+                  <span className={styles.name}>{product.title}</span>
+                </td>
+                <td className={styles.tableData}>
+                  {product.extras.map((extra) => (
+                    <span className={styles.extras} key={extra._id}>
+                      {extra.text},
+                    </span>
+                  ))}
+                </td>
+                <td className={styles.tableData}>
+                  <span className={styles.price}>{product.price} €</span>
+                </td>
+                <td className={styles.tableData}>
+                  <span className={styles.quantity}>{product.quantity}</span>
+                </td>
+                <td className={styles.tableData}>
+                  <span className={styles.total}>
+                    {product.price * product.quantity} €
+                  </span>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -57,7 +67,7 @@ function cart() {
           <Card.Body>
             <div className={styles.cardContent}>
               <b>Subtotal:</b>
-              79.60 €
+              {cart.total}
             </div>
             <div className={styles.cardContent}>
               <b>Discount:</b>
@@ -65,7 +75,7 @@ function cart() {
             </div>
             <div className={styles.cardContent}>
               <b>Total:</b>
-              79.60 €
+              {cart.total}
             </div>
           </Card.Body>
           <Card.Divider />
@@ -82,4 +92,4 @@ function cart() {
   )
 }
 
-export default cart
+export default Cart
