@@ -54,6 +54,23 @@
   font-weight: bold;
 }
 
+.paymentMethod {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.cashMethod {
+  display: flex;
+  justify-content: center;
+}
+
+.paypalMethod {
+  margin: auto;
+  width: 150px;
+}
+
 .button {
   display: flex;
   justify-content: center;
