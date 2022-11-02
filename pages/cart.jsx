@@ -13,14 +13,16 @@ import {
 import { useRouter } from 'next/router'
 import { reset } from '../redux/cartSlice'
 import axios from 'axios'
-
+import CashModal from '../components/CashModal'
 
 function Cart() {
   const dispatch = useDispatch()
   const router = useRouter()
 
   const cart = useSelector((state) => state.cart)
-  const [open, setOpen] = useState(false)
+  const [payment, setPayment] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false)
+
   const amount = cart.total
   const currency = 'EUR'
   const style = { layout: 'vertical' }
@@ -49,7 +51,7 @@ function Cart() {
           currency: currency
         }
       })
-    }, [])
+    }, [currency, showSpinner])
 
     return (
       <>
@@ -161,10 +163,12 @@ function Cart() {
           </Card.Body>
           <Card.Divider />
           <Card.Footer>
-            {open ? (
+            {payment ? (
               <div className={styles.paymentMethod}>
                 <div className={styles.cashMethod}>
-                  <Button auto>CASH ON DELIVERY</Button>
+                  <Button onPress={() => setModalVisible(true)}>
+                    CASH ON DELIVERY
+                  </Button>
                 </div>
 
                 <div className={styles.paypalMethod}>
@@ -183,7 +187,7 @@ function Cart() {
               </div>
             ) : (
               <div className={styles.button}>
-                <Button color='warning' auto onPress={() => setOpen(true)}>
+                <Button color='warning' auto onPress={() => setPayment(true)}>
                   CHECKOUT NOW !
                 </Button>
               </div>
@@ -191,6 +195,12 @@ function Cart() {
           </Card.Footer>
         </Card>
       </div>
+      <CashModal
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        total={cart.total}
+        createOrder={createOrder}
+      />
     </div>
   )
 }
