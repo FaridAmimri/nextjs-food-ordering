@@ -1,0 +1,42 @@
+/** @format */
+
+.container {
+  display: flex;
+  padding: 40px;
+}
+
+.item {
+  flex: 1;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 20px;
+  text-align: left;
+}
+
+.title,
+.trTitle {
+  color: var(--text-color-secondary);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 5px;
+  height: 53px;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .trTitle {
+    display: none;
+  }
+  .trData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
