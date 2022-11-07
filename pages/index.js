@@ -7,15 +7,23 @@ import Slider from '../components/Slider'
 import styles from '../styles/Home.module.css'
 
 export const getServerSideProps = async () => {
+  const cookie = ctx.req?.cookies || ''
+  let admin = false
+
+  if (cookie.token !== process.env.TOKEN) {
+    admin = true
+  }
+
   const res = await axios.get('http://localhost:3000/api/products')
   return {
     props: {
-      productList: res.data
+      productList: res.data,
+      admin
     }
   }
 }
 
-export default function Home({ productList }) {
+export default function Home({ productList, admin }) {
   return (
     <div className={styles.container}>
       <Head>
