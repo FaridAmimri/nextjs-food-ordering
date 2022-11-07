@@ -38,7 +38,9 @@ function Navbar() {
           <Link href='/'>
             <li className={styles.listItem}>Home</li>
           </Link>
-          <li className={styles.listItem}>Menu</li>
+          <Link href='/admin/login'>
+            <li className={styles.listItem}>Dashboard</li>
+          </Link>
           <div className={styles.logo}>
             <FaPizzaSlice />
           </div>
