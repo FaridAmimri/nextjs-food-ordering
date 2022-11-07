@@ -1,0 +1,25 @@
+/** @format */
+
+.title {
+  font-size: 24px;
+  color: var(--text-color-secondary);
+}
+
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.error {
+  font-size: 14px;
+  color: red;
+}
