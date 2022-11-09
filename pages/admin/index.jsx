@@ -2,14 +2,22 @@
 
 import Image from 'next/image'
 import { Button } from '@nextui-org/react'
+import { FaSignOutAlt } from 'react-icons/fa'
 import styles from '../../styles/Admin.module.css'
 import axios from 'axios'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 function Index({ productsList, ordersList }) {
   const [products, setProducts] = useState(productsList)
   const [orders, setOrders] = useState(ordersList)
   const status = ['preparing', 'on the way', 'delivered']
+  const router = useRouter()
+
+  const handleLogOut = async () => {
+    await axios.post('http://localhost:3000/api/auth/logout')
+    router.push('/admin/login')
+  }
 
   const handleDelete = async (id) => {
     try {
@@ -36,6 +44,10 @@ function Index({ productsList, ordersList }) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.signoutButton}>
+        Sign Out
+        <FaSignOutAlt onClick={handleLogOut} />
+      </div>
       <div className={styles.item}>
         <h1 className={styles.title}>Products</h1>
         <table className={styles.table}>
