@@ -4,9 +4,9 @@ import cookie from 'cookie'
 
 const handler = (req, res) => {
   if (req.method === 'POST') {
-    const { username, password } = req.body
+    const { email, password } = req.body
     if (
-      username === process.env.ADMIN_USERNAME &&
+      email === process.env.ADMIN_USERNAME &&
       password === process.env.ADMIN_PASSWORD
     ) {
       res.setHeader(
