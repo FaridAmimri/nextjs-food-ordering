@@ -2,59 +2,70 @@
 
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import { Button, Input } from '@nextui-org/react'
+import { Button, Input, Loading } from '@nextui-org/react'
 import styles from '../../styles/Login.module.css'
 import axios from 'axios'
 
 function Login() {
-  const [username, setUsername] = useState(null)
+  const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const router = useRouter()
 
-  const handleClick = async (e) => {
+  const handleLogIn = async (e) => {
     try {
+      setLoading(true)
       await axios.post('http://localhost:3000/api/auth/login', {
-        username,
+        email,
         password
       })
-      console.log('Yes You are connected')
       router.push('/admin')
     } catch (error) {
       setError(true)
+      setLoading(false)
     }
   }
 
   return (
     <div className={styles.container}>
+      {loading && <Loading color='warning' type='gradient' size='xl' />}
       <h1 className={styles.title}>Admin Dashboard</h1>
       <form className={styles.wrapper}>
         <Input
-          type='text'
+          type='email'
           size='xl'
           name='email'
+          clearable
+          color='warning'
+          bordered
           placeholder='Email'
           aria-labelledby='email'
           id='email'
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         ></Input>
-        <Input
+        <Input.Password
           type='password'
           size='xl'
           name='password'
+          clearable
+          color='warning'
+          bordered
           placeholder='Password'
           aria-labelledby='password'
           id='password'
           onChange={(e) => setPassword(e.target.value)}
-        ></Input>
+        />
         {error && (
           <span className={styles.error}>Invalid username or password</span>
         )}
         <Button
           size='lg'
           aria-labelledby='form submit'
+          ghost
+          flat
           color='warning'
-          onPress={handleClick}
+          onPress={handleLogIn}
         >
           Sign In
         </Button>
@@ -64,53 +75,3 @@ function Login() {
 }
 
 export default Login
-
-{
-  /* <Modal closeButton preventClose aria-labelledby='modal-title' open={true}>
-        <Modal.Header>
-          <Text id='modal-title' size={20}>
-            Welcome to Login Dashbord
-          </Text>
-        </Modal.Header>
-        <Spacer y={1} />
-        <Modal.Body>
-          <Input
-            clearable
-            bordered
-            fullWidth
-            name='email'
-            aria-labelledby='email'
-            color='primary'
-            size='lg'
-            placeholder='Username'
-            onChange={handleChange}
-          />
-          <Input.Password
-            clearable
-            bordered
-            fullWidth
-            name='password'
-            aria-labelledby='password'
-            color='primary'
-            size='lg'
-            placeholder='Password'
-            onChange={handleChange}
-          />
-          {error && (
-            <span className={styles.error}>Email or Password invalid</span>
-          )}
-          <Row justify='space-between'>
-            <Checkbox>
-              <Text size={14}>Remember me</Text>
-            </Checkbox>
-            <Text size={14}>Forgot password?</Text>
-          </Row>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button auto flat color='error'>
-            Close
-          </Button>
-          <Button auto>Sign in</Button>
-        </Modal.Footer>
-      </Modal> */
-}
