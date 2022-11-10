@@ -1,7 +1,7 @@
 /** @format */
 
 .container {
-  padding: 20px 10px;
+  padding: 50px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,7 @@
   font-size: 20px;
   width: 70%;
   color: var(--tertiary-color);
+  text-align: center;
 }
 
 .wrapper {
@@ -25,8 +26,9 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 20px 0;
+  gap: 20px;
 }
-
 
 @media screen and (max-width: 768px) {
   .title {

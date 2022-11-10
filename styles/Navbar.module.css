@@ -63,6 +63,10 @@
   cursor: pointer;
 }
 
+.logo {
+  padding: 0 20px;
+}
+
 .logo svg {
   width: 50px;
   height: 50px;
@@ -85,8 +89,8 @@
 
 .cartIcon svg,
 .toggleButton svg {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .counter {
@@ -126,7 +130,7 @@
     font-size: 25px;
     position: fixed;
     top: calc(50% - 420px / 2);
-    left: calc(50% - 142px / 2);
+    left: calc(50% - 181px / 2);
   }
 
   #closeLinks,

@@ -5,6 +5,19 @@
   padding: 40px;
 }
 
+.signoutButton {
+  display: flex;
+  position: absolute;
+  right: 50px;
+  top: 120px;
+}
+
+.signoutButton svg {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
 .item {
   flex: 1;
 }
@@ -13,6 +26,10 @@
   width: 100%;
   border-spacing: 20px;
   text-align: left;
+}
+
+.title {
+  text-align: center;
 }
 
 .title,

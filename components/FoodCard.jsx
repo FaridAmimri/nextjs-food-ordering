@@ -7,7 +7,7 @@ import styles from '../styles/FoodCard.module.css'
 function FoodCard({ food }) {
   return (
     <div className={styles.container}>
-      <Link href={`/product/${food._id}`}>
+      <Link href={`/products/${food._id}`}>
         <a>
           <Image src={food.image} alt='' width={500} height={500} />
         </a>

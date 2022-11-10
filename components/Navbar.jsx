@@ -38,13 +38,15 @@ function Navbar() {
           <Link href='/'>
             <li className={styles.listItem}>Home</li>
           </Link>
-          <Link href='/admin/login'>
+          <Link href='/admin'>
             <li className={styles.listItem}>Dashboard</li>
           </Link>
           <div className={styles.logo}>
             <FaPizzaSlice />
           </div>
-          <li className={styles.listItem}>Order</li>
+          <Link href='/products'>
+            <li className={styles.listItem}>Pizzas</li>
+          </Link>
           <li className={styles.listItem}>Contact</li>
         </ul>
       </div>
