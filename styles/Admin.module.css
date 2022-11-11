@@ -2,17 +2,30 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   padding: 40px;
 }
 
-.signoutButton {
+.buttonContainer {
   display: flex;
-  position: absolute;
-  right: 50px;
-  top: 120px;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.signoutButton svg {
+.tableContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.addButton {
+  display: flex;
+}
+
+.logoutButton {
+  display: flex;
+}
+
+.logoutButton svg {
   width: 25px;
   height: 25px;
   margin-left: 10px;
@@ -40,12 +53,16 @@
 .buttonContainer {
   display: flex;
   gap: 5px;
-  height: 53px;
+  height: 45px;
   align-items: center;
+  align-items: flex-end;
 }
 
 @media screen and (max-width: 768px) {
   .container {
+    flex-direction: column;
+  }
+  .tableContainer {
     flex-direction: column;
   }
   .trTitle {
