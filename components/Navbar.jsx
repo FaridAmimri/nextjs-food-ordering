@@ -47,7 +47,9 @@ function Navbar() {
           <Link href='/products'>
             <li className={styles.listItem}>Pizzas</li>
           </Link>
-          <li className={styles.listItem}>Contact</li>
+          <Link href='/tracker'>
+            <li className={styles.listItem}>Tracker</li>
+          </Link>
         </ul>
       </div>
       <div className={styles.item}>
