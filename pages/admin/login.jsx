@@ -13,7 +13,7 @@ function Login() {
   const [error, setError] = useState(false)
   const router = useRouter()
 
-  const handleLogIn = async (e) => {
+  const handleLogIn = async () => {
     try {
       setLoading(true)
       await axios.post('http://localhost:3000/api/auth/login', {
