@@ -64,7 +64,6 @@ function AddProduct() {
     <div className={styles.container}>
       <Button
         auto
-        shadow
         color='warning'
         onPress={handler}
         className={styles.addButton}
