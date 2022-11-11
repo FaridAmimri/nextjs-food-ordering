@@ -1,6 +1,6 @@
 /** @format */
 
-import styles from '../../styles/Order.module.css'
+import styles from '../../styles/Orders.module.css'
 import { Card, Button } from '@nextui-org/react'
 import {
   FaCashRegister,
@@ -10,7 +10,6 @@ import {
   FaHome
 } from 'react-icons/fa'
 import axios from 'axios'
-axios
 
 function Order({ order }) {
   const status = order.status
