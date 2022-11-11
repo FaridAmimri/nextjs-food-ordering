@@ -8,21 +8,12 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../redux/cartSlice'
 
-export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`)
-  return {
-    props: {
-      pizza: res.data
-    }
-  }
-}
-
 function Product({ pizza }) {
   const [price, setPrice] = useState(pizza.prices[0])
   const [size, setSize] = useState(0)
   const [extras, setExtras] = useState([])
   const [quantity, setQuantity] = useState(1)
-  
+
   const dispatch = useDispatch()
 
   const changePrice = (number) => {
@@ -48,7 +39,7 @@ function Product({ pizza }) {
   }
 
   const handleClick = () => {
-    dispatch(addProduct({...pizza, extras, price, quantity}))
+    dispatch(addProduct({ ...pizza, extras, price, quantity }))
   }
 
   return (
@@ -138,6 +129,15 @@ function Product({ pizza }) {
       </div>
     </div>
   )
+}
+
+export const getServerSideProps = async ({ params }) => {
+  const res = await axios.get(`http://localhost:3000/api/products/${params.id}`)
+  return {
+    props: {
+      pizza: res.data
+    }
+  }
 }
 
 export default Product
