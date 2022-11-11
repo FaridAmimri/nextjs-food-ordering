@@ -1,0 +1,175 @@
+/** @format */
+
+.container {
+  display: flex;
+  padding: 40px;
+}
+
+.left {
+  flex: 3;
+  width: 100%;
+  text-align: left;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 20px;
+}
+
+.tableRowTitle th {
+  color: var(--text-color-secondary);
+  font-weight: bold;
+}
+
+.tableRowData {
+  color: var(--text-color-secondary);
+}
+
+.id {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.total {
+  font-weight: bold;
+}
+
+/* Orders process */
+
+.orders {
+  width: 80%;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inProgress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: inProgress 1s ease infinite alternate;
+}
+
+@keyframes inProgress {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.undone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.inProgress .checkedIcon,
+.undone .checkedIcon {
+  display: none;
+}
+
+.icon svg {
+  color: var(--secondary-color);
+  font-size: x-large;
+}
+
+.done span,
+.inProgress span,
+.undone span {
+  color: var(--secondary-color);
+}
+
+.checkedIcon svg {
+  color: green;
+}
+
+/* Cart resume*/
+
+.right {
+  flex: 1;
+}
+
+.cardContent b {
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    font-size: 20px;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .left {
+    margin-right: 0;
+  }
+
+  .table {
+    border-spacing: 30px;
+  }
+
+  .tableRowTitle {
+    display: none;
+  }
+
+  .tableRowData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .left p {
+    white-space: pre-wrap;
+    text-align: center;
+  }
+
+  .column {
+    display: none;
+  }
+
+  /* Orders process */
+
+  .orders {
+    width: 100%;
+    height: 350px;
+    justify-content: space-around;
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .done,
+  .inProgress,
+  .undone {
+    margin-bottom: 20px;
+  }
+
+  /* Cart resume*/
+
+  .button span {
+    font-size: 22px;
+  }
+}
