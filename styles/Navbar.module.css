@@ -166,3 +166,16 @@
     right: -15px;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .item:nth-child(1) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .texts {
+    margin: 5px 0 0 0;
+    min-width: 110px;
+  }
+}
