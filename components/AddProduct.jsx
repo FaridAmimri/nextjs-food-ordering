@@ -1,6 +1,6 @@
 /** @format */
 
-import { Modal, Button, Text, Input, Spacer } from '@nextui-org/react'
+import { Modal, Button, Text, Input, Spacer, Loading } from '@nextui-org/react'
 import axios from 'axios'
 import { useState } from 'react'
 import styles from '../styles/AddProduct.module.css'
@@ -14,6 +14,7 @@ function AddProduct() {
   const [extraOptions, setExtraOptions] = useState([])
 
   const [visible, setVisible] = useState(false)
+  const [loading, setLoading] = useState(false)
   const handler = () => setVisible(true)
 
   const closeHandler = () => {
@@ -35,6 +36,7 @@ function AddProduct() {
   }
 
   const handleCreate = async () => {
+    setLoading(true)
     const data = new FormData()
     data.append('file', file)
     data.append('upload_preset', 'uploads')
@@ -77,9 +79,12 @@ function AddProduct() {
         onClose={closeHandler}
       >
         <Modal.Header>
-          <Text id='modal-title' size={18}>
-            Add your pizza
-          </Text>
+          <div className={styles.header}>
+            <Text id='modal-title' size={18}>
+              Add your pizza
+            </Text>
+            {loading && <Loading color='warning' type='gradient' size='md' />}
+          </div>
         </Modal.Header>
         <Modal.Body>
           <div className={styles.imageContainer}>
@@ -162,7 +167,7 @@ function AddProduct() {
               color='warning'
               size='xl'
               name='text'
-              labelPlaceholder='Extra'
+              placeholder='Extra'
               aria-labelledby='Extra'
               onChange={handleExtra}
             />
@@ -182,7 +187,7 @@ function AddProduct() {
               Add
             </Button>
           </div>
-          <div className={styles.setExtraOptions}>
+          <div className={styles.extraOptions}>
             {extraOptions.map((extra, index) => (
               <span key={index}>{extra.text}</span>
             ))}
