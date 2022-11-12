@@ -1,5 +1,10 @@
 /** @format */
 
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
 .priceContainer {
   display: flex;
 }
@@ -7,4 +12,9 @@
 .extraContainer {
   display: flex;
   align-items: center;
+}
+
+.extraOptions {
+  display: flex;
+  justify-content: space-evenly;
 }
