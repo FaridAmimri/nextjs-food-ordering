@@ -90,14 +90,11 @@ function Index({ productsList, ordersList }) {
                   <td>{product.title}</td>
                   <td>{product.prices[0]}</td>
                   <td className={styles.buttonContainer}>
-                    <Button auto bordered size='xs' color='secondary'>
-                      Edit
-                    </Button>
                     <Button
                       auto
                       bordered
                       size='xs'
-                      color='error'
+                      color='secondary'
                       onPress={() => handleDelete(product._id)}
                     >
                       Delete
