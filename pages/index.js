@@ -10,7 +10,7 @@ export default function Home({ productList }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Nextjs-Pizzeria</title>
+        <title>Pizza Di Mama</title>
         <meta name='description' content='Your best pizza' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
