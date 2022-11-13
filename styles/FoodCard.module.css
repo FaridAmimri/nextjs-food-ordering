@@ -41,9 +41,12 @@
 @media screen and (max-width: 768px) {
   .container {
     width: 90%;
+    transition: none;
+    cursor: auto;
   }
   .container:hover {
-    display: none;
+    background-color: transparent;
+    transform: none;
   }
   .title {
     font-size: 30px;
