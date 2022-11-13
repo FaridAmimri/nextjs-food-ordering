@@ -16,10 +16,13 @@ function Login() {
   const handleLogIn = async () => {
     try {
       setLoading(true)
-      await axios.post('http://localhost:3000/api/auth/login', {
-        email,
-        password
-      })
+      await axios.post(
+        'https://nextjs-food-ordering-seven.vercel.app/api/auth/login',
+        {
+          email,
+          password
+        }
+      )
       router.push('/admin')
     } catch (error) {
       setError(true)

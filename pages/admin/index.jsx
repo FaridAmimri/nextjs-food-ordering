@@ -16,13 +16,17 @@ function Index({ productsList, ordersList }) {
   const router = useRouter()
 
   const handleLogOut = async () => {
-    await axios.post('http://localhost:3000/api/auth/logout')
+    await axios.post(
+      'https://nextjs-food-ordering-seven.vercel.app/api/auth/logout'
+    )
     router.push('/admin/login')
   }
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3000/api/products/${id}`)
+      const res = await axios.delete(
+        `https://nextjs-food-ordering-seven.vercel.app/products/${id}`
+      )
       setProducts(products.filter((product) => product._id !== id))
     } catch (error) {
       console.log(error)
@@ -34,9 +38,12 @@ function Index({ productsList, ordersList }) {
     const currentStatus = orderToUpdate.status
 
     try {
-      const res = await axios.put(`http://localhost:3000/api/orders/${id}`, {
-        status: currentStatus + 1
-      })
+      const res = await axios.put(
+        `https://nextjs-food-ordering-seven.vercel.app/api/orders/${id}`,
+        {
+          status: currentStatus + 1
+        }
+      )
       setOrders([res.data, ...orders.filter((order) => order._id !== id)])
     } catch (error) {
       console.log(error)
