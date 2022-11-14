@@ -56,3 +56,12 @@
     font-size: 24px;
   }
 }
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .title {
+    width: 150px;
+  }
+  .description {
+    height: 200px;
+  }
+}
