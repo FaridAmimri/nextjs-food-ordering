@@ -1,6 +1,7 @@
 /** @format */
 
 import cookie from 'cookie'
+const cors = require('cors').config()
 
 const handler = (req, res) => {
   if (req.method === 'POST') {
