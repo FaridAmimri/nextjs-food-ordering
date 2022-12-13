@@ -4,6 +4,7 @@ import { Modal, Button, Text, Input, Spacer, Loading } from '@nextui-org/react'
 import axios from 'axios'
 import { useState } from 'react'
 import styles from '../styles/AddProduct.module.css'
+import { useRouter } from 'next/router'
 
 function AddProduct() {
   const [file, setFile] = useState(null)
@@ -16,6 +17,7 @@ function AddProduct() {
   const [visible, setVisible] = useState(false)
   const [loading, setLoading] = useState(false)
   const handler = () => setVisible(true)
+  const router = useRouter()
 
   const closeHandler = () => {
     setVisible(false)
@@ -57,6 +59,7 @@ function AddProduct() {
 
       await axios.post('http://localhost:3000/api/products', newProduct)
       setVisible(false)
+      router.push('/cart')
     } catch (error) {
       console.log(error)
     }
