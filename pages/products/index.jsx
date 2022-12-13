@@ -1,7 +1,7 @@
 /** @format */
 
-import axios from 'axios'
 import FoodList from '../../components/FoodList'
+import { publicRequest } from '../../util/requests'
 
 function Index({ productList }) {
   return (
@@ -12,9 +12,7 @@ function Index({ productList }) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get(
-    'https://nextjs-food-ordering-seven.vercel.app/api/products'
-  )
+  const res = await publicRequest.get('api/products')
   return {
     props: {
       productList: res.data
