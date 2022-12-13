@@ -7,6 +7,7 @@ import { Checkbox, Input, Button } from '@nextui-org/react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../redux/cartSlice'
+import { useRouter } from 'next/router'
 
 function Product({ pizza }) {
   const [price, setPrice] = useState(pizza.prices[0])
@@ -15,6 +16,7 @@ function Product({ pizza }) {
   const [quantity, setQuantity] = useState(1)
 
   const dispatch = useDispatch()
+  const router = useRouter()
 
   const changePrice = (number) => {
     setPrice(price + number)
@@ -40,6 +42,7 @@ function Product({ pizza }) {
 
   const handleClick = () => {
     dispatch(addProduct({ ...pizza, extras, price, quantity }))
+    router.push('/cart')
   }
 
   return (
