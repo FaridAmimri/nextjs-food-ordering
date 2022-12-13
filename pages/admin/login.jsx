@@ -23,7 +23,7 @@ function Login() {
           password
         }
       )
-      router.push('/admin')
+      router.push('https://nextjs-food-ordering-seven.vercel.app/cart')
     } catch (error) {
       setError(true)
       setLoading(false)
