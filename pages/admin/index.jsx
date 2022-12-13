@@ -102,7 +102,7 @@ function Index({ productsList, ordersList }) {
                       bordered
                       size='xs'
                       color='secondary'
-                      onPress={() => handleDelete(product._id)}
+                      // onPress={() => handleDelete(product._id)}
                     >
                       Delete
                     </Button>
